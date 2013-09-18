@@ -7,7 +7,7 @@ mcdir=
 bkdir=
 
 # User script will be run with
-user=juri
+user=
 
 # Backup name goes here
 bkname=
