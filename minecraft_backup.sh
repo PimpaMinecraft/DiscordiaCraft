@@ -7,10 +7,10 @@ mcdir=
 bkdir=
 
 # User script will be run with
-user=
+user=juri
 
 # Backup name goes here
-bkname=minecraft
+bkname=
 
 if [[ ! -e $mcdir ]]
 then
@@ -37,5 +37,5 @@ then
 	exit 0
 fi
 
-echo "[OK] Backup suceeded. Data saved in $bkdir/${bkname}_${time}.tar.gz"
+echo "[OK]: Backup suceeded. Data saved in $bkdir/${bkname}_${time}.tar.gz"
 exit 1

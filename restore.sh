@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# WARNING: this script WAS NEVER TESTED. Use at your own risk.
-
 # Backup script goes here
 backup=
 
@@ -14,16 +12,16 @@ then
         exit 0
 fi
 
-if [[ ! -e ${backup} ]]
+if [[ ! -x ${backup} ]]
 then
-        echo "[ERROR]: Backup script not found or \$backup not set"
+        echo "[ERROR]: Backup script not found/executable or \$backup not set"
         exit 0
 fi
 
 if [[ ! -e ${mcdir} ]]
 then
         echo "[ERROR]: Minecraft dir not found or \$mcdir not set"
-        echo 0
+        exit 0
 fi
 
 if [[ ! -e $1 ]]
@@ -46,6 +44,8 @@ then
 fi
 
 # Run actual restore
+
+echo "[INFO]: Backup suceeded, running restore."
 
 tar -xzf "$1" -C ${mcdir}
 
